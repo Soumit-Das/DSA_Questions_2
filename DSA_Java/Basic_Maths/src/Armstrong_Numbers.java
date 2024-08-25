@@ -35,6 +35,7 @@ public class Armstrong_Numbers {
 
     public static void main(String[] args) {
         System.out.println(armstrongNumber(372));
+        System.out.println((int) Math.sqrt(4));
     }
 
 }
