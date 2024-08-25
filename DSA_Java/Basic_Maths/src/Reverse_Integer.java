@@ -25,7 +25,7 @@ Link : https://leetcode.com/problems/reverse-integer/description/
 public class Reverse_Integer {
     public static int reverse(int x) {
         int rev = 0;
-        int lastDigit = 0;
+        int lastDigit;
         while (x != 0) {
             lastDigit = x % 10;
             if (rev > Integer.MAX_VALUE / 10 || rev < Integer.MIN_VALUE / 10) {

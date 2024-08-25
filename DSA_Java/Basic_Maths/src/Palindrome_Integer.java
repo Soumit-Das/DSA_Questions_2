@@ -5,7 +5,7 @@ public class Palindrome_Integer {
         }
         int dup = x;
         int rev = 0;
-        int last = 0;
+        int last;
         while(x != 0){
             last = x % 10;
             rev = (rev * 10) + last;
