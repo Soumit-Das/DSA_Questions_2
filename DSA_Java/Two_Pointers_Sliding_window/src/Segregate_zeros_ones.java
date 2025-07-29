@@ -23,14 +23,15 @@ We use the two-pointer technique to move 0s to the left and 1s to the right, all
 
 Step-by-step explanation:
 1. Initialize two pointers:
-   - `p1` at the beginning of the array (start scanning from left)
-   - `p2` at the end of the array (start scanning from right)
+   - `p1` at the beginning of the array (start)
+   - `p2` at the end of the array (end)
 
-2. Loop while p1 is less than or equal to p2:
-   - If arr[p1] is 0 and arr[p2] is 1 → it's already in the correct position, so move both pointers inward.
-   - If arr[p1] is 1 and arr[p2] is 0 → swap them, since they are in the wrong position.
-   - If arr[p1] is 0 and arr[p2] is 0 → p1 is fine, move it forward to check next.
-   - If arr[p1] is 1 and arr[p2] is 1 → p2 is fine, move it backward to check next.
+2. While p1 is less than or equal to p2:
+   - Move `p1` forward until you find a 1 (since 0s are already on the correct side).
+   - Move `p2` backward until you find a 0 (since 1s are already on the correct side).
+   - If `p1` is still less than `p2`, swap the elements at `p1` and `p2`, and move both pointers inward.
+
+This approach ensures that all 0s are moved to the front and 1s to the back with minimal swaps and optimal performance.
  */
 
 public class Segregate_zeros_ones {
@@ -39,19 +40,18 @@ public class Segregate_zeros_ones {
         int p1 = 0;
         int p2 = arr.length - 1;
 
-        while (p1 <= p2) {
-            if (arr[p1] == 0 && arr[p2] == 1) {
+        while(p1 <= p2){
+            while(p1 <= p2 && arr[p1] == 0){
                 p1++;
+            }
+            while(p2 >= p1 && arr[p2] == 1){
                 p2--;
-            } else if (arr[p1] == 1 && arr[p2] == 0) {
-                int temp = arr[p1];
-                arr[p1] = arr[p2];
-                arr[p2] = temp;
+            }
+            if(p1 < p2){
+                int temp = arr[p2];
+                arr[p2] = arr[p1];
+                arr[p1] = temp;
                 p1++;
-                p2--;
-            } else if (arr[p1] == 0 && arr[p2] == 0) {
-                p1++;
-            } else if (arr[p1] == 1 && arr[p2] == 1) {
                 p2--;
             }
         }
