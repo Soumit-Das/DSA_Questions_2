@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA_Java.iml" filepath="$PROJECT_DIR$/.idea/DSA_Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/Number_Theory/Number_Theory.iml" filepath="$PROJECT_DIR$/Number_Theory/Number_Theory.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sorting/Sorting.iml" filepath="$PROJECT_DIR$/Sorting/Sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Two_Pointers_Sliding_window/Two_Pointers_Sliding_window.iml" filepath="$PROJECT_DIR$/Two_Pointers_Sliding_window/Two_Pointers_Sliding_window.iml" />
     </modules>
   </component>
 </project>
